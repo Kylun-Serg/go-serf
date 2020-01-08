@@ -18,6 +18,7 @@ body {
 a {
 	display: inline-block;
 	text-decoration: none;
+	color: #fff;
 }
 
 ul, li {
@@ -89,6 +90,39 @@ ul, li {
 		padding-right: 10px;
 		span {
 			font-weight: 100;
+		}
+	}
+}
+
+.btn {
+	font-size: 40px;
+	font-weight: 800;
+	line-height: 36px;
+	span {
+		padding: 17px 57px 15px 17px;
+		background-color: $green;
+		display: inline-block;
+		margin-left: 19px;
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			width: 20px;
+			height: 1px;
+			background-color: #fff;
+			top: 50%;
+			left: -10px;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			width: 25px;
+			height: 21px;
+			background-image: url('../img/arrow-right.svg');
+			top: 50%;
+			right: 17px;
+			transform: translateY(-50%);
 		}
 	}
 }
