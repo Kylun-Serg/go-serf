@@ -195,8 +195,9 @@
 	}
 }
 
+
+
 .surf {
-	padding: 160px 0 120px;
 	background-image: url('../img/surf-bg.png');
 	background-position: right 200px;
 	background-repeat: no-repeat;
@@ -463,5 +464,42 @@
 		}
 	}
 }
+
+
+.travel {
+	background-image: url('../img/travel-bg.png');
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	&-slider {
+		&__head {
+			background-repeat: no-repeat;
+			background-position: top left;
+			min-height: 780px;
+		}
+		&__descr {
+			margin-top: -230px;
+			padding: 160px 0 0132px;
+			min-height: 320px;
+			background-repeat: no-repeat;
+			background-position: right center;
+			img {
+				padding-left: 24px;
+			}
+		}
+		&__subtitle {
+			text-align: right;
+			padding-right: 80px;
+			padding-top: 132px;
+		}
+		&__btn {
+			text-align: center;
+		}
+	}
+}
+
+
+
+
+
 
 @import "media";
