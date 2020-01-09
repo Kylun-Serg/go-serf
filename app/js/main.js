@@ -8,7 +8,7 @@ $(function(){
 		 asNavFor: '.slider-dots',
 	});
 
-	$('.slider-dots').slick({
+	$('.slider-dotshead').slick({
 		 slidesToShow: 4,
 		 slidesToScroll: 1,
 		 asNavFor: '.header__slider',
@@ -19,7 +19,15 @@ $(function(){
 		 slidesToScroll: 1,
 		 prevArrow:'<img class="slider-arrows slider-arrows__left" src="img/arrow-left.svg" alt="">',
 		 nextArrow:'<img class="slider-arrows slider-arrows__right" src="img/arrow-right.svg" alt="">',
-		
+		 asNavFor: '.slider-map',
+	});
+
+	$('.slider-map').slick({
+		 slidesToShow: 8,
+		 slidesToScroll: 1,
+		 arrows: false,
+		 asNavFor: '.surf-slider',
+		 focusOnSelect: true,
 	});
 
   
