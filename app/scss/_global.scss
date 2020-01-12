@@ -13,6 +13,8 @@ body {
 	color: #fff;
 	background-color: #171919 ;
 	text-transform: uppercase;
+	min-width: 320px;
+	overflow-x: hidden;
 }
 
 a {
@@ -51,7 +53,7 @@ ul, li {
 	}
 }
 
-.headline-left {
+.headline-right {
 	font-size: 22px;
 	line-height: 32px;
 	letter-spacing: 7.33333px;
@@ -72,12 +74,15 @@ ul, li {
 
 .title {
 
-	span {
+	div {
 		font-weight: 800;
 		font-size: 200px;
 		color: rgba(#fff, .02);
 		position: relative;
 		transform: translateX(-50px);
+		display: inline-block;
+	}
+	span {
 		display: inline-block;
 	}
 
@@ -225,3 +230,14 @@ input[type=number]
   position: absolute;
   right: 25px;
 }
+
+.star-list {
+	li {
+		display: inline-block;
+		& + li {
+			margin-left: -25px;
+		}
+	}
+}
+
+	

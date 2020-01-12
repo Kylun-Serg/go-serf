@@ -12,6 +12,12 @@ $(function(){
 		 slidesToShow: 4,
 		 slidesToScroll: 1,
 		 asNavFor: '.header__slider',
+     responsive: [
+      {
+        breakpoint: 961,
+        settings: "unslick"
+      },
+    ]
 	});
 
 	$('.surf-slider').slick({
@@ -21,6 +27,35 @@ $(function(){
 		 prevArrow:'<img class="slider-arrows slider-arrows__left" src="img/arrow-left.svg" alt="">',
 		 nextArrow:'<img class="slider-arrows slider-arrows__right" src="img/arrow-right.svg" alt="">',
 		 asNavFor: '.slider-map',
+     responsive: [
+      {
+        breakpoint: 1210,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 720,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+        }
+      },
+       {
+        breakpoint: 426,
+        settings: {
+          slidesToShow: 1,
+          centerMode: false,
+        }
+      },
+    ]
 	});
 
 	$('.slider-map').slick({
@@ -29,16 +64,40 @@ $(function(){
 		 arrows: false,
 		 asNavFor: '.surf-slider',
 		 focusOnSelect: true,
+      responsive: [
+      {
+        breakpoint: 1103,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          centerMode: true,
+        }
+      },
+
+       {
+        breakpoint: 720,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+        }
+      },
+    ]
 	});
 
-	$('.holder__slider').slick({
+	$('.holder__slider, .shop__slider').slick({
 		infinite : true,
 		fade: true,
 		prevArrow:'<img class="slider-arrows slider-arrows__left" src="img/arrow-left.svg" alt="">',
 		nextArrow:'<img class="slider-arrows slider-arrows__right" src="img/arrow-right.svg" alt="">',
 	});
 
-	  $('<div class="quantity-nav"><div class="quantity-button quantity-up"><img src="img/plus.svg" alt=""></div><div class="quantity-button quantity-down"><img src="img/minus.svg" alt=""></div></div>').insertAfter('.quantity input');
+	$('<div class="quantity-nav"><div class="quantity-button quantity-up"><img src="img/plus.svg" alt=""></div><div class="quantity-button quantity-down"><img src="img/minus.svg" alt=""></div></div>').insertAfter('.quantity input');
     $('.quantity').each(function() {
       var spinner = $(this),
         input = spinner.find('input[type="number"]'),
@@ -71,14 +130,23 @@ $(function(){
 
     });
 
-    let summ = $('.nights').val() *  $('.summ').data('.nights') + ($('.guests').val() - 1) * $('.summ').data('.guests');
+    $('.quantity-button').on('click', function(){
+    	let summ = $('.nights').val() *  $('.summ').data('nights') + ($('.guests').val() - 1) * $('.summ').data('guests');
+    	$('.summ').html('$'+ summ);
+    });
 
-
+    let summ = $('.nights').val() *  $('.summ').data('nights') + ($('.guests').val() - 1) * $('.summ').data('guests');
     $('.summ').html('$'+ summ);
 
-    // let summ = ($('.guests').val() * $('.summ').data('nights')) * $('.nights').val();
-		
-    // $('.summ').html('$' + summ.toFixed(1));
 
-  
+    $('.surfboard-box__circle').on('click', function(){
+    	$(this).toggleClass('active')
+    });
+
+    $('.menu-btn').on('click', function(){
+      $('.menu').toggleClass('active');
+    });
+
+    new WOW().init();
+
 });
